@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+.player {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.timer {
+    font-size: 48px;
+    font-family: monospace;
+}
+
+.active {
+    background-color: #e0e0e0;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+} 

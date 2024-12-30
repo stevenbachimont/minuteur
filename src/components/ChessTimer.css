@@ -1,0 +1,188 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100dvh;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.player-section {
+  width: 100%;
+  height: 50%; /* Exactement la moitié de l'écran */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Style pour le joueur 1 (haut) */
+.player-section:first-child {
+  background-color: #000000;
+}
+
+/* Style pour le joueur 2 (bas) */
+.player-section:last-child {
+  background-color: #ffffff;
+  flex-direction: column-reverse;
+}
+
+/* Styles des éléments selon leur zone */
+.player-section:first-child .player-button,
+.player-section:first-child .player-name,
+.player-section:first-child .name-input {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.player-section:last-child .player-button,
+.player-section:last-child .player-name,
+.player-section:last-child .name-input {
+  color: #000000;
+  border-color: #000000;
+}
+
+.player-button {
+  width: 300px;
+  height: 120px;
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: #333;
+  padding: 0 20px;
+  z-index: 10;
+  border-radius: 8px;
+}
+
+.active {
+  background-color: #8d1acb !important;
+  color: #ffffff !important;
+  border-color: #ff00d9 !important;
+  box-shadow: 0 0 50px rgba(233, 9, 229, 0.6);
+}
+
+.timer {
+  font-size: 48px;
+  font-family: 'SF Mono', monospace;
+}
+
+.player-name {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  cursor: text;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Ajustements pour les contrôles */
+.time-select, .pause-button, .reset-button {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 40px;
+}
+
+/* Rotation du joueur 2 */
+.player-section:last-child .player-button,
+.player-section:last-child .player-name,
+.player-section:last-child .name-input {
+  transform: rotate(180deg);
+}
+
+/* Style pour l'input de nom */
+.name-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 0;
+  width: auto;
+  min-width: 150px;
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-height: 600px) {
+  .player-button {
+    height: 100px;
+  }
+  
+  .timer {
+    font-size: 36px;
+  }
+} 
+
+.pause-button {
+  font-size: 20px; /* Plus grand pour les symboles */
+  line-height: 1;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pause-button.paused {
+  color: #ff00d9;
+  border-color: #ff00d9;
+  box-shadow: 0 0 10px rgba(233, 9, 229, 0.3);
+}
+
+.reset-button {
+  font-size: 24px;
+  line-height: 1;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  color: #ff00d9;
+  border-color: #ff00d9;
+  box-shadow: 0 0 10px rgba(233, 9, 229, 0.3);
+} 
